@@ -1,0 +1,13 @@
+%h1 Listing Shows
+
+%div.show-list
+  %ul
+    - @shows.each do |show|
+      %li
+        %div
+          %span.show-name= show.name
+          = link_to 'Show', show
+          = link_to 'Edit', edit_show_path(show)
+          = link_to 'Destroy', show, method: :delete, data: { confirm: 'Are you sure?' }
+
+= link_to 'New Show', new_show_path
